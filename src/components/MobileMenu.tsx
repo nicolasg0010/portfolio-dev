@@ -11,7 +11,7 @@ export default function MobileMenu() {
   ));
 
   return (
-    <div className="bg-white text-black fixed h-screen w-full sm:hidden">
+    <div className="bg-white text-black fixed h-screen w-full sm:hidden z-50">
       <div className=" flex flex-col mt-28 mx-8 gap-5">{sectionsBtn}</div>
     </div>
   );

@@ -68,7 +68,7 @@ export default function Navbar({ menuOpen, setMenuOpen }: Props) {
 
   return (
     <nav
-      className="fixed w-full h-11 flex justify-between items-center px-4 py-7"
+      className="fixed w-full h-11 flex justify-between items-center px-4 py-7 z-50"
       ref={navRef}
     >
       {menuOpen ? (
@@ -77,7 +77,7 @@ export default function Navbar({ menuOpen, setMenuOpen }: Props) {
         <FiMenu onClick={handleMenu} className="text-2xl sm:hidden" />
       )}
 
-      <span className="hidden sm:block">Nicolas Garcia</span>
+      <span>Nicolas Garcia</span>
 
       <motion.nav className="hidden sm:flex z-10 md:absolute md:inset-0 md:justify-center">
         <motion.div
@@ -100,12 +100,6 @@ export default function Navbar({ menuOpen, setMenuOpen }: Props) {
           })}
         </motion.div>
       </motion.nav>
-
-      {/* <div className="hidden sm:block">
-        {navSections.map((section) => (
-          <button key={section}>{section}</button>
-        ))}
-      </div> */}
 
       <FiSun className="text-2xl" />
     </nav>
