@@ -1,10 +1,7 @@
 /*eslint quotes: ["error", "single", { "avoidEscape": true }]*/
 
-import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai';
-import { BsFacebook, BsGithub, BsLinkedin } from 'react-icons/bs';
-import { FaDev } from 'react-icons/fa';
-import { HiMail } from 'react-icons/hi';
-import { SiCodepen } from 'react-icons/si';
+import { AiOutlineTwitter } from 'react-icons/ai';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
 export const navSections = [
   'home',
