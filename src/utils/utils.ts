@@ -1,5 +1,11 @@
 /*eslint quotes: ["error", "single", { "avoidEscape": true }]*/
 
+import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai';
+import { BsFacebook, BsGithub, BsLinkedin } from 'react-icons/bs';
+import { FaDev } from 'react-icons/fa';
+import { HiMail } from 'react-icons/hi';
+import { SiCodepen } from 'react-icons/si';
+
 export const navSections = [
   'home',
   'projects',
@@ -171,5 +177,23 @@ export const projectData = [
     previewURL: 'https://google-next-docs.vercel.app/',
     tools: ['Next.js', 'Tailwind CSS', 'Firebase', 'Draft.js', 'Next Auth'],
     pinned: true,
+  },
+];
+
+export const socialMedia = [
+  {
+    title: 'Twitter',
+    Icon: AiOutlineTwitter,
+    url: 'https://twitter.com/intent/follow?screen_name=j471n_',
+  },
+  {
+    title: 'LinkedIn',
+    Icon: BsLinkedin,
+    url: 'https://www.linkedin.com/in/j471n/',
+  },
+  {
+    title: 'Github',
+    Icon: BsGithub,
+    url: 'https://github.com/j471n',
   },
 ];
