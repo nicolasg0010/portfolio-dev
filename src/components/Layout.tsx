@@ -14,7 +14,7 @@ export default function Layout({ children }: Props) {
     <div className="min-h-screen">
       {menuOpen && <MobileMenu />}
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <div className="pt-11">
+      <main className="pt-11">
         {children}
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque,
         temporibus? Quia laudantium facilis aut dolores. Quo nisi aliquid,
@@ -45,7 +45,7 @@ export default function Layout({ children }: Props) {
         amet consectetur adipisicing elit. Doloremque, temporibus? Quia
         laudantium facilis aut dolores. Quo nisi aliquid, maiores vero quis iste
         voluptatum ad quas fuga, optio earum necessitatibus beatae!
-      </div>
+      </main>
     </div>
   );
 }
