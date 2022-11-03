@@ -1,18 +1,36 @@
+import { motion } from 'framer-motion';
 import { navSections } from '../utils/utils';
+import {
+  hamFastFadeContainer,
+  mobileNavItemSideways,
+} from '../styles/FramerMotionVariants';
 
 export default function MobileMenu() {
-  const sectionsBtn = navSections.map((section) => (
-    <button
-      key={section}
-      className="border-b border-gray-300 text-gray-900 font-semibold flex w-auto py-4 capitalize text-xl cursor-pointer"
-    >
-      {section}
-    </button>
-  ));
-
   return (
-    <div className="bg-white text-black fixed h-screen w-full sm:hidden z-50">
-      <div className=" flex flex-col mt-28 mx-8 gap-5">{sectionsBtn}</div>
-    </div>
+    <motion.div
+      className="fixed font-normal bg-white w-screen h-screen top-0 left-0 z-50 sm:hidden"
+      variants={hamFastFadeContainer}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+    >
+      <motion.div className="mt-28 mx-8 flex flex-col">
+        {navSections.map((link) => {
+          const navlink =
+            link.toLowerCase() === 'home' ? '/' : `/${link.toLowerCase()}`;
+          return (
+            <motion.a
+              key={crypto.randomUUID()}
+              href={navlink}
+              className="border-b border-gray-300 text-gray-900 font-semibold flex w-auto py-4 capitalize text-base cursor-pointer"
+              variants={mobileNavItemSideways}
+              // onClick={handleClick}
+            >
+              {link === 'rss' ? link.toUpperCase() : link}
+            </motion.a>
+          );
+        })}
+      </motion.div>
+    </motion.div>
   );
 }

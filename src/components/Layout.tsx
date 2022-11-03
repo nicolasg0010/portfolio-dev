@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import Navbar from './Navbar';
 import MobileMenu from './MobileMenu';
@@ -13,7 +14,7 @@ export default function Layout({ children }: Props) {
 
   return (
     <div className="min-h-screen">
-      {menuOpen && <MobileMenu />}
+      <AnimatePresence>{menuOpen && <MobileMenu />}</AnimatePresence>
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <main className="pt-11">{children}</main>
       <Footer />
