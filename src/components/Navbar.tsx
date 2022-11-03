@@ -37,23 +37,13 @@ export default function Navbar({ menuOpen, setMenuOpen }: Props) {
   const addShadowToNavbar = useCallback(() => {
     if (window.pageYOffset > 10) {
       navRef.current?.classList.add(
-        ...[
-          'shadow',
-          'backdrop-blur-xl',
-          'bg-white/70',
-          'dark:bg-darkSecondary',
-        ]
+        ...['shadow', 'backdrop-blur-xl', 'bg-white/70']
       );
 
       control.start('visible');
     } else {
       navRef.current?.classList.remove(
-        ...[
-          'shadow',
-          'backdrop-blur-xl',
-          'bg-white/70',
-          'dark:bg-darkSecondary',
-        ]
+        ...['shadow', 'backdrop-blur-xl', 'bg-white/70']
       );
       control.start('hidden');
     }

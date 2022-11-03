@@ -5,3 +5,7 @@
 .lock-scroll {
   overflow: hidden !important;
 }
+
+.card {
+  @apply bg-white p-5 sm:p-10 flex flex-col sm:flex-row gap-8 items-center max-w-2xl shadow-md rounded-lg mt-[30%] sm:mt-8 transition-all;
+}
