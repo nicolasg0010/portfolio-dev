@@ -7,10 +7,9 @@ type Props = {
     name: string;
     coverURL: string;
     description: string;
-    githubURL: string;
+    githubURLs: string[];
     previewURL: string;
     tools: string[];
-    pinned?: boolean;
   };
 };
 
@@ -51,15 +50,18 @@ export default function Project({ project }: Props) {
         </div>
 
         <div className="mt-auto p-2 w-fit flex items-center gap-4">
-          <a
-            title="Source Code on GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={project.githubURL}
-            className="text-gray-500 hover:text-black"
-          >
-            <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
-          </a>
+          {project.githubURLs.map((repo) => (
+            <a
+              key={repo}
+              title="Source Code on GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={repo}
+              className="text-gray-500 hover:text-black"
+            >
+              <BsGithub className="w-6 h-6 hover:scale-110 active:scale-90 transition-all" />
+            </a>
+          ))}
 
           {project.previewURL && (
             <a

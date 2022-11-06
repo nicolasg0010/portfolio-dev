@@ -8,7 +8,7 @@ import { FadeContainer, popUp } from '../../styles/FramerMotionVariants';
 export default function Skills() {
   return (
     <section className="mx-5 py-20">
-      <HomeHeading title="My Top Skills" />
+      <HomeHeading title="Skills" />
       <motion.div
         initial="hidden"
         whileInView="visible"

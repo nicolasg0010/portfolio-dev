@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <>
       <section className="pageTop py-20 mx-5">
-        <HomeHeading title="My Projects" />
+        <HomeHeading title="Projects" />
 
         <AnimatedDiv
           variants={FadeContainer}
