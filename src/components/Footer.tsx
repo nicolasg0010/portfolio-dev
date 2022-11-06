@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className=" text-gray-600 font-inter mb-20 print:hidden">
+    <footer className="text-gray-600 font-inter mb-20 print:hidden">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -13,7 +13,7 @@ export default function Footer() {
         viewport={{ once: true }}
         className="max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl p-5 border-t-2 border-gray-200 mx-auto text-sm sm:text-base flex flex-col gap-5"
       >
-        <section className="grid grid-cols-2 gap-10">
+        <section className="flex justify-around">
           <div className="flex flex-col gap-4 capitalize">
             {navSections.map((text, index) => {
               return <FooterLink key={index} route={text} text={text} />;
@@ -30,7 +30,9 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   href={platform.url}
                 >
-                  {platform.title}
+                  <div className="flex gap-2 items-center">
+                    <platform.Icon className="h-4 w-4" /> {platform.title}
+                  </div>
                 </motion.a>
               );
             })}

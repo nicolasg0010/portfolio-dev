@@ -1,7 +1,20 @@
 /*eslint quotes: ["error", "single", { "avoidEscape": true }]*/
 
-import { AiOutlineTwitter } from 'react-icons/ai';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { SiTwitter, SiLinkedin, SiGithub } from 'react-icons/si';
+import {
+  SiTypescript,
+  SiRedux,
+  SiJavascript,
+  SiNodedotjs,
+  SiPostgresql,
+  SiSequelize,
+  SiExpress,
+  SiJest,
+  SiHtml5,
+  SiCss3,
+  SiHeroku,
+  SiReact,
+} from 'react-icons/si';
 
 export const navSections = [
   'home',
@@ -180,17 +193,68 @@ export const projectData = [
 export const socialMedia = [
   {
     title: 'Twitter',
-    Icon: AiOutlineTwitter,
-    url: 'https://twitter.com/intent/follow?screen_name=j471n_',
+    Icon: SiTwitter,
+    url: 'https://twitter.com/intent/follow?screen_name=nicolasg0010',
   },
   {
     title: 'LinkedIn',
-    Icon: BsLinkedin,
-    url: 'https://www.linkedin.com/in/j471n/',
+    Icon: SiLinkedin,
+    url: 'https://www.linkedin.com/in/fngarcia/',
   },
   {
     title: 'Github',
-    Icon: BsGithub,
-    url: 'https://github.com/j471n',
+    Icon: SiGithub,
+    url: 'https://github.com/nicolasg0010',
+  },
+];
+
+export const skills = [
+  {
+    title: 'React',
+    Icon: SiReact,
+  },
+  {
+    title: 'Redux',
+    Icon: SiRedux,
+  },
+  {
+    title: 'TypeScript',
+    Icon: SiTypescript,
+  },
+  {
+    title: 'JavaScript',
+    Icon: SiJavascript,
+  },
+  {
+    title: 'Node.js',
+    Icon: SiNodedotjs,
+  },
+  {
+    title: 'Express',
+    Icon: SiExpress,
+  },
+  {
+    title: 'PostgreSQL',
+    Icon: SiPostgresql,
+  },
+  {
+    title: 'Sequelize',
+    Icon: SiSequelize,
+  },
+  {
+    title: 'JEST',
+    Icon: SiJest,
+  },
+  {
+    title: 'Heroku',
+    Icon: SiHeroku,
+  },
+  {
+    title: 'CSS3',
+    Icon: SiCss3,
+  },
+  {
+    title: 'HTML',
+    Icon: SiHtml5,
   },
 ];
