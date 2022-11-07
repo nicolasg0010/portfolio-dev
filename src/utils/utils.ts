@@ -18,8 +18,8 @@ import {
 
 export const navSections = [
   'home',
+  'skills',
   'projects',
-  'education',
   'about me',
   'contact',
 ];

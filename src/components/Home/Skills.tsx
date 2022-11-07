@@ -7,7 +7,7 @@ import { FadeContainer, popUp } from '../../styles/FramerMotionVariants';
 
 export default function Skills() {
   return (
-    <section className="mx-5 py-20">
+    <section id="skills" className="mx-5 py-20">
       <HomeHeading title="Skills" />
       <motion.div
         initial="hidden"

@@ -4,6 +4,7 @@ import { headingFromLeft } from '../../styles/FramerMotionVariants';
 import Header from './Header';
 import Skills from './Skills';
 import Projects from './Projects';
+import About from './About';
 import Contact from './Contact';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Skills />
       <Projects />
+      <About />
       <Contact />
     </div>
   );

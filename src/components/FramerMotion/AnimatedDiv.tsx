@@ -8,6 +8,7 @@ type Props = {
       transition: {
         delayChildren: number;
         staggerChildren: number;
+        delay?: any;
       };
     };
   };
@@ -23,7 +24,7 @@ export default function AnimatedDiv({
   children,
   infinity,
   style,
-}: Props) {
+}: any) {
   return (
     <motion.div
       initial="hidden"

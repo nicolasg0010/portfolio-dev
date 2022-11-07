@@ -8,7 +8,7 @@ import { HomeHeading } from './index';
 export default function Projects() {
   return (
     <>
-      <section className="pageTop py-20 mx-5">
+      <section id="projects" className="pageTop py-20 mx-5">
         <HomeHeading title="Projects" />
 
         <AnimatedDiv

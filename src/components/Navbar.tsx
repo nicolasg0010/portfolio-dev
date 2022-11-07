@@ -71,6 +71,7 @@ export default function Navbar({ menuOpen, setMenuOpen }: Props) {
             return (
               <button key={section}>
                 <motion.a
+                  href={section === 'about me' ? '#about' : `#${section}`}
                   variants={popUp}
                   className=" text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
                 >

@@ -8,6 +8,7 @@ import { FadeContainer } from '../../styles/FramerMotionVariants';
 export default function Header() {
   return (
     <motion.section
+      id="home"
       initial="hidden"
       whileInView="visible"
       variants={FadeContainer}
