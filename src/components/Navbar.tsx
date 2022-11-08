@@ -6,13 +6,11 @@ import {
   SetStateAction,
 } from 'react';
 import { useAnimation, motion } from 'framer-motion';
-import { FiSun } from 'react-icons/fi';
 
+import LanguageBtn from './LanguageBtn';
 import HamburgerBtn from './HamburgerBtn';
 import { navSections } from '../utils/utils';
 import { popUp, FadeContainer } from '../styles/FramerMotionVariants';
-
-import i18n, { lngs } from '../i18n';
 
 type Props = {
   menuOpen: boolean;
@@ -56,51 +54,37 @@ export default function Navbar({ menuOpen, setMenuOpen }: Props) {
   }, [addShadowToNavbar]);
 
   return (
-    <>
-      <div>
-        {Object.keys(lngs).map((lng) => (
-          <button
-            key={lng}
-            style={{
-              fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal',
-            }}
-            type="submit"
-            onClick={() => i18n.changeLanguage(lng)}
-          >
-            {lngs[lng as keyof typeof lngs].nativeName}
-          </button>
-        ))}
-      </div>
-      <nav
-        className="fixed w-full h-11 flex justify-between items-center px-4 py-7 z-50"
-        ref={navRef}
-      >
-        <HamburgerBtn menuOpen={menuOpen} handleMenu={handleMenu} />
-        <span>Nicolas Garcia</span>
-        <motion.div className="hidden sm:flex z-10 md:absolute md:inset-0 md:justify-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={FadeContainer}
-            className="flex items-center md:gap-2"
-          >
-            {/* {navSections.map((section) => {
+    <nav
+      className="fixed w-full h-11 flex justify-between items-center px-4 py-7 z-50"
+      ref={navRef}
+    >
+      <HamburgerBtn menuOpen={menuOpen} handleMenu={handleMenu} />
+      <span>Nicolas Garcia</span>
+      <motion.div className="hidden sm:flex z-10 md:absolute md:inset-0 md:justify-center">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={FadeContainer}
+          className="flex items-center md:gap-2"
+        >
+          {navSections.map((section) => {
             return (
               <button key={section}>
-              <motion.a
-              href={section === 'about me' ? '#about' : `#${section}`}
-              variants={popUp}
-              className=" text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
-              >
-              <span className="capitalize">{section}</span>
-              </motion.a>
+                <motion.a
+                  href={section === 'about me' ? '#about' : `#${section}`}
+                  variants={popUp}
+                  className=" text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
+                >
+                  <span className="capitalize">{section}</span>
+                </motion.a>
               </button>
-              );
-            })} */}
-          </motion.div>
+            );
+          })}
         </motion.div>
-        <FiSun className="text-2xl" />
-      </nav>
-    </>
+      </motion.div>
+      <div className="z-10">
+        <LanguageBtn />
+      </div>
+    </nav>
   );
 }
