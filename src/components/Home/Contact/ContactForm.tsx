@@ -8,6 +8,7 @@ import {
   mobileNavItemSideways,
 } from '../../../styles/FramerMotionVariants';
 import Ripples from 'react-ripples';
+import { useTranslation } from 'react-i18next';
 
 // initial State of the form
 const initialFormState = {
@@ -20,6 +21,7 @@ const initialFormState = {
 };
 
 export default function Form() {
+  const { t } = useTranslation();
   const [emailInfo, setEmailInfo] = useState(initialFormState);
   const [loading, setLoading] = useState(false);
 
@@ -98,7 +100,7 @@ export default function Form() {
               htmlFor="floating_first_name"
               className="peer-focus:font-medium absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-              First name
+              {t('contact.form.first_name')}
             </label>
           </motion.div>
           <motion.div
@@ -124,7 +126,7 @@ export default function Form() {
               htmlFor="floating_last_name"
               className="peer-focus:font-medium absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-              Last name
+              {t('contact.form.last_name')}
             </label>
           </motion.div>
         </div>
@@ -151,7 +153,7 @@ export default function Form() {
             htmlFor="floating_email"
             className="peer-focus:font-medium absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
-            Email address
+            {t('contact.form.email')}
           </label>
         </motion.div>
         <motion.div
@@ -177,7 +179,7 @@ export default function Form() {
             htmlFor="floating_subject"
             className="peer-focus:font-medium absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
-            Subject
+            {t('contact.form.subject')}
           </label>
         </motion.div>
         <motion.div
@@ -202,7 +204,7 @@ export default function Form() {
             htmlFor="floating_message"
             className="peer-focus:font-medium absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
-            Message
+            {t('contact.form.message')}
           </label>
         </motion.div>
 
@@ -226,7 +228,11 @@ export default function Form() {
                 >
                   <AiOutlineLoading className="font-bold text-xl" />
                 </p>
-                <p>{loading ? 'Sending...' : 'Send'}</p>
+                <p>
+                  {loading
+                    ? t('contact.form.loading_button')
+                    : t('contact.form.send_button')}
+                </p>
               </div>
             </button>
           </Ripples>

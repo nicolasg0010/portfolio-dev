@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import Project from '../Project';
 import AnimatedDiv from '../FramerMotion/AnimatedDiv';
@@ -6,10 +7,12 @@ import { projectData } from '../../utils/utils';
 import { HomeHeading } from './index';
 
 export default function Projects() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section id="projects" className="pageTop py-20 mx-5">
-        <HomeHeading title="Projects" />
+        <HomeHeading title={`${t('projects.title')}`} />
 
         <AnimatedDiv
           variants={FadeContainer}

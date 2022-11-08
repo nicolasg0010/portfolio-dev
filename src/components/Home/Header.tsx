@@ -52,8 +52,7 @@ export default function Header() {
             variants={opacityVariant}
             className="text-gray-500 font-medium text-sm md:text-base text-center"
           >
-            I just graduated from Henry bootcamp as a Full-stack developer. My
-            favorite tools are React and TypeScript.
+            {t('header.intro')}
           </motion.p>
         </div>
 

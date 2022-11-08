@@ -20,10 +20,13 @@ export default function LanguageBtn() {
   }, []);
 
   return (
-    <button onClick={changeLanguage} className="flex items-center gap-2 z-10">
+    <button
+      onClick={changeLanguage}
+      className="flex items-center gap-2 z-10 px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
+    >
       <RiTranslate2 />
       <span className="hidden sm:block">
-        {currLang === 'es' ? 'English' : 'Spanish'}
+        {currLang === 'es' ? 'English' : 'Español'}
       </span>
     </button>
   );

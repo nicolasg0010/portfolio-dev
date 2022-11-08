@@ -1,12 +1,15 @@
+import { useTranslation } from 'react-i18next';
 import AnimatedDiv from '../../FramerMotion/AnimatedDiv';
 import { opacityVariant } from '../../../styles/FramerMotionVariants';
 import { HomeHeading } from '..';
 
 export default function index() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section id="about" className="pageTop py-40 mx-5">
-        <HomeHeading title="About me" />
+        <HomeHeading title={`${t('about.title')}`} />
         <AnimatedDiv
           variants={opacityVariant}
           className="font-inter w-full blog-container prose-sm  3xl:prose-lg"
