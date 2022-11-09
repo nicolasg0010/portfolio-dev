@@ -1,4 +1,5 @@
 /* eslint-disable indent */
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 import { HomeHeading } from './index';
@@ -6,9 +7,10 @@ import { skills } from '../../utils/utils';
 import { FadeContainer, popUp } from '../../styles/FramerMotionVariants';
 
 export default function Skills() {
+  const { t } = useTranslation();
   return (
     <section id="skills" className="mx-5 py-20">
-      <HomeHeading title="Skills" />
+      <HomeHeading title={`${t('skills.title')}`} />
       <motion.div
         initial="hidden"
         whileInView="visible"

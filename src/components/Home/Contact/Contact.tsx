@@ -3,8 +3,11 @@ import { popUpFromBottomForText } from '../../../styles/FramerMotionVariants';
 import AnimatedText from '../../FramerMotion/AnimatedText';
 import AnimatedHeading from '../../FramerMotion/AnimatedHeading';
 import ContactForm from './ContactForm';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <div id="contact" className="bg-white !relative py-20">
       {/* Get in touch top section */}
@@ -13,17 +16,14 @@ export default function Contact() {
           variants={popUpFromBottomForText}
           className="font-bold text-4xl"
         >
-          Get in touch
+          {t('contact.title')}
         </AnimatedHeading>
 
         <AnimatedText
           variants={popUpFromBottomForText}
           className="px-4 py-2 font-medium text-slate-400"
         >
-          <>
-            Have a little something, something you wanna talk about? Please feel
-            free to get in touch anytime, whether for work or to just Hi 🙋‍♂️.
-          </>
+          <>{t('contact.description')}</>
         </AnimatedText>
       </section>
 
@@ -35,7 +35,7 @@ export default function Contact() {
             variants={popUpFromBottomForText}
             className="text-2xl font-bold w-full text-center my-2"
           >
-            Connect with me
+            {t('contact.subtitle')}
           </AnimatedHeading>
 
           <ContactForm />

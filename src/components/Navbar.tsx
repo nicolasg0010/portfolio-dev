@@ -6,11 +6,11 @@ import {
   SetStateAction,
 } from 'react';
 import { useAnimation, motion } from 'framer-motion';
-import { FiSun } from 'react-icons/fi';
 
+import LanguageBtn from './LanguageBtn';
 import HamburgerBtn from './HamburgerBtn';
-import { navSections } from '../utils/utils';
 import { popUp, FadeContainer } from '../styles/FramerMotionVariants';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   menuOpen: boolean;
@@ -18,17 +18,18 @@ type Props = {
 };
 
 export default function Navbar({ menuOpen, setMenuOpen }: Props) {
+  const { t } = useTranslation();
   const navRef = useRef<HTMLElement | null>(null);
   const control = useAnimation();
 
-  const lockScroll = () => {
-    const root = document.getElementsByTagName('html')[0];
-    root.classList.toggle('lock-scroll');
-  };
+  // const lockScroll = () => {
+  //   const root = document.getElementsByTagName('html')[0];
+  //   root.classList.toggle('lock-scroll');
+  // };
 
   const handleMenu = () => {
     navRef.current?.classList.remove(...['shadow']);
-    lockScroll();
+    // lockScroll();
     setMenuOpen(!menuOpen);
   };
 
@@ -67,22 +68,56 @@ export default function Navbar({ menuOpen, setMenuOpen }: Props) {
           variants={FadeContainer}
           className="flex items-center md:gap-2"
         >
-          {navSections.map((section) => {
-            return (
-              <button key={section}>
-                <motion.a
-                  href={section === 'about me' ? '#about' : `#${section}`}
-                  variants={popUp}
-                  className=" text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
-                >
-                  <span className="capitalize">{section}</span>
-                </motion.a>
-              </button>
-            );
-          })}
+          <button>
+            <motion.a
+              href="#home"
+              variants={popUp}
+              className="text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
+            >
+              <span className="capitalize">{t('navigation.home')}</span>
+            </motion.a>
+          </button>
+          <button>
+            <motion.a
+              href="#skills"
+              variants={popUp}
+              className="text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
+            >
+              <span className="capitalize">{t('navigation.skills')}</span>
+            </motion.a>
+          </button>
+          <button>
+            <motion.a
+              href="#projects"
+              variants={popUp}
+              className="text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
+            >
+              <span className="capitalize">{t('navigation.projects')}</span>
+            </motion.a>
+          </button>
+          <button>
+            <motion.a
+              href="#about"
+              variants={popUp}
+              className="text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
+            >
+              <span className="capitalize">{t('navigation.about')}</span>
+            </motion.a>
+          </button>
+          <button>
+            <motion.a
+              href="#contact"
+              variants={popUp}
+              className="text-black sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-gray-100 rounded-md"
+            >
+              <span className="capitalize">{t('navigation.contact')}</span>
+            </motion.a>
+          </button>
         </motion.div>
       </motion.div>
-      <FiSun className="text-2xl" />
+      <div className="z-10">
+        <LanguageBtn />
+      </div>
     </nav>
   );
 }

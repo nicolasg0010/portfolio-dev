@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { popUp, opacityVariant } from '../../styles/FramerMotionVariants';
 import { FiDownload } from 'react-icons/fi';
@@ -9,6 +10,8 @@ import cv_en from '../../assets/Nicolas_Garcia_resume.pdf';
 import cv_es from '../../assets/Nicolas_Garcia_cv.pdf';
 
 export default function Header() {
+  const { t } = useTranslation();
+
   return (
     <motion.section
       id="home"
@@ -44,7 +47,7 @@ export default function Header() {
               variants={opacityVariant}
               className="font-medium text-xs md:text-sm lg:text-lg text-gray-500"
             >
-              Full-stack Developer
+              {t('header.subtitle')}
             </motion.p>
           </div>
 
@@ -52,8 +55,7 @@ export default function Header() {
             variants={opacityVariant}
             className="text-gray-500 font-medium text-sm md:text-base text-center"
           >
-            I just graduated from Henry bootcamp as a Full-stack developer. My
-            favorite tools are React and TypeScript.
+            {t('header.intro')}
           </motion.p>
         </div>
 

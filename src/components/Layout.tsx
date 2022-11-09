@@ -15,7 +15,9 @@ export default function Layout({ children }: Props) {
 
   return (
     <div className="min-h-screen">
-      <AnimatePresence>{menuOpen && <MobileMenu />}</AnimatePresence>
+      <AnimatePresence>
+        {menuOpen && <MobileMenu setMenuOpen={setMenuOpen} />}
+      </AnimatePresence>
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <main className="pt-11">{children}</main>
       <Footer />
