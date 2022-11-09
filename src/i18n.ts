@@ -30,6 +30,7 @@ i18n
             subtitle: 'Full Stack Developer',
             intro:
               'I just graduated from Henry bootcamp as a Full-stack developer. My favorite tools are React and TypeScript.',
+            download_btn: 'Resume',
           },
           skills: {
             title: 'Skills',
@@ -70,6 +71,7 @@ i18n
             subtitle: 'Desarrollador Full Stack',
             intro:
               'Acabo de graduarme de Henry bootcamp como desarrollador de pila completa. Mis herramientas favoritas son React y TypeScript.',
+            download_btn: 'Curriculum',
           },
           skills: {
             title: 'Habilidades',

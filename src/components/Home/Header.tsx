@@ -1,3 +1,4 @@
+import i18n from '../../i18n';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { popUp, opacityVariant } from '../../styles/FramerMotionVariants';
@@ -62,12 +63,12 @@ export default function Header() {
         <motion.div className="rounded-md overflow-hidden" variants={popUp}>
           <Ripples className="w-full" color="rgba(0, 0, 0, 0.5)">
             <a
-              href={cv_en}
+              href={i18n.resolvedLanguage === 'en' ? cv_en : cv_es}
               download
               className="flex items-center gap-2 px-5 py-2 border rounded-md border-gray-500 select-none hover:bg-gray-100 outline-none"
             >
               <FiDownload />
-              <p>Resume</p>
+              <p>{t('header.download_btn')}</p>
             </a>
           </Ripples>
         </motion.div>
