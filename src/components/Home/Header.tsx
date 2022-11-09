@@ -5,6 +5,9 @@ import Ripples from 'react-ripples';
 
 import { FadeContainer } from '../../styles/FramerMotionVariants';
 
+import cv_en from '../../assets/Nicolas_Garcia_resume.pdf';
+import cv_es from '../../assets/Nicolas_Garcia_cv.pdf';
+
 export default function Header() {
   return (
     <motion.section
@@ -56,13 +59,14 @@ export default function Header() {
 
         <motion.div className="rounded-md overflow-hidden" variants={popUp}>
           <Ripples className="w-full" color="rgba(0, 0, 0, 0.5)">
-            <button
+            <a
+              href={cv_en}
+              download
               className="flex items-center gap-2 px-5 py-2 border rounded-md border-gray-500 select-none hover:bg-gray-100 outline-none"
-              onClick={() => alert('download resume')}
             >
               <FiDownload />
               <p>Resume</p>
-            </button>
+            </a>
           </Ripples>
         </motion.div>
       </div>
