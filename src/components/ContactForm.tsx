@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import {
   FadeContainer,
   mobileNavItemSideways,
-} from '../../../styles/FramerMotionVariants';
+} from '../styles/FramerMotionVariants';
 import Ripples from 'react-ripples';
 import { useTranslation } from 'react-i18next';
 

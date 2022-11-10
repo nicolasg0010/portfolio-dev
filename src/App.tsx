@@ -1,5 +1,5 @@
-import Layout from './components/Layout';
-import Home from './components/Home';
+import Layout from './layout/Layout';
+import Home from './pages/Home';
 
 export default function App() {
   return (

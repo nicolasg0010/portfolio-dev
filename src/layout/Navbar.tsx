@@ -7,8 +7,8 @@ import {
 } from 'react';
 import { useAnimation, motion } from 'framer-motion';
 
-import LanguageBtn from './LanguageBtn';
-import HamburgerBtn from './HamburgerBtn';
+import LanguageBtn from '../components/LanguageBtn';
+import HamburgerBtn from '../components/HamburgerBtn';
 import { popUp, FadeContainer } from '../styles/FramerMotionVariants';
 import { useTranslation } from 'react-i18next';
 

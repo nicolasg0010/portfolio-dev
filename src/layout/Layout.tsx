@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import Navbar from './Navbar';
-import MobileMenu from './MobileMenu';
+import MobileMenu from '../components/MobileMenu';
 import Footer from './Footer';
-import ScrollToTop from './ScrollToTop';
+import ScrollToTop from '../components/ScrollToTop';
 
 type Props = {
   children: JSX.Element;

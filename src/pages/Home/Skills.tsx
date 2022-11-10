@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
-import { HomeHeading } from './index';
+import HomeHeading from '../../components/HomeHeading';
 import { skills } from '../../utils/utils';
 import { FadeContainer, popUp } from '../../styles/FramerMotionVariants';
 
@@ -24,7 +24,7 @@ export default function Skills() {
               key={skill.title}
               variants={popUp}
               title={skill.title}
-              className="p-4 flex items-center justify-center sm:justify-start gap-4 bg-gray-50 hover:bg-white border rounded-sm border-gray-300  transform origin-center md:origin-top group"
+              className="p-4 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 bg-gray-50 hover:bg-white border rounded-sm border-gray-300  transform origin-center md:origin-top group"
             >
               <div className="relative transition group-hover:scale-110 sm:group-hover:scale-100 select-none pointer-events-none">
                 <skill.Icon className="w-8 h-8" />

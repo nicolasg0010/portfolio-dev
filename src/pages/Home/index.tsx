@@ -1,6 +1,3 @@
-import AnimatedHeading from '../FramerMotion/AnimatedHeading';
-import { headingFromLeft } from '../../styles/FramerMotionVariants';
-
 import Header from './Header';
 import Skills from './Skills';
 import Projects from './Projects';
@@ -16,16 +13,5 @@ export default function Home() {
       <About />
       <Contact />
     </div>
-  );
-}
-
-export function HomeHeading({ title }: { title: string }) {
-  return (
-    <AnimatedHeading
-      className="w-full font-bold text-3xl text-left my-2 font-inter"
-      variants={headingFromLeft}
-    >
-      {title}
-    </AnimatedHeading>
   );
 }

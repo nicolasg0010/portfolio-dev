@@ -1,4 +1,5 @@
-import { socialMedia } from '../utils/utils';
+import { socialsData } from '../content/socialsData';
+
 import { FadeContainer, popUp } from '../styles/FramerMotionVariants';
 import { motion } from 'framer-motion';
 
@@ -14,7 +15,7 @@ export default function Footer() {
       >
         <section className="flex justify-around">
           <div className="flex flex-col gap-4 capitalize">
-            {socialMedia.map((platform) => {
+            {socialsData.map((platform) => {
               return (
                 <motion.a
                   key={platform.title}
