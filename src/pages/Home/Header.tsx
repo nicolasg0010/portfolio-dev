@@ -5,6 +5,8 @@ import { popUp, opacityVariant } from '../../styles/FramerMotionVariants';
 import { FiDownload } from 'react-icons/fi';
 import Ripples from 'react-ripples';
 
+import { socialsData } from '../../content/socialsData';
+
 import { FadeContainer } from '../../styles/FramerMotionVariants';
 
 import cv_en from '../../assets/Nicolas_Garcia_resume.pdf';
@@ -35,7 +37,22 @@ export default function Header() {
             alt="cover Profile Image"
           />
         </motion.div>
-
+        <motion.div className="flex items-center justify-center gap-6">
+          {socialsData.map((platform) => {
+            return (
+              <motion.a
+                key={platform.title}
+                className="hover:text-black w-fit"
+                variants={popUp}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={platform.url}
+              >
+                <platform.Icon className="h-5 w-5" />
+              </motion.a>
+            );
+          })}
+        </motion.div>
         <div className="w-full flex flex-col p-5 gap-3 select-none text-center ">
           <div className="flex flex-col gap-1">
             <motion.h1
