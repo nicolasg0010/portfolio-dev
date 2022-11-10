@@ -60,7 +60,12 @@ export default function Navbar({ menuOpen, setMenuOpen }: Props) {
       ref={navRef}
     >
       <HamburgerBtn menuOpen={menuOpen} handleMenu={handleMenu} />
-      <span>Nicolas Garcia</span>
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="z-50"
+      >
+        Nicolas Garcia
+      </button>
       <motion.div className="hidden sm:flex z-10 md:absolute md:inset-0 md:justify-center">
         <motion.div
           initial="hidden"
