@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AiOutlineLoading } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import {
   FadeContainer,
@@ -12,9 +12,8 @@ import { useTranslation } from 'react-i18next';
 
 // initial State of the form
 const initialFormState = {
-  to_name: 'Jatin Sharma',
-  first_name: '',
-  last_name: '',
+  to_name: 'Nicolas Garcia',
+  name: '',
   email: '',
   subject: '',
   message: '',
@@ -25,44 +24,48 @@ export default function Form() {
   const [emailInfo, setEmailInfo] = useState(initialFormState);
   const [loading, setLoading] = useState(false);
 
-  // function sendEmail(e) {
-  //   e.preventDefault();
-  //   setLoading(true);
+  function sendEmail(e: any) {
+    e.preventDefault();
+    setLoading(true);
 
-  //   emailjs
-  //     .send(
-  //       process.env.NEXT_PUBLIC_YOUR_SERVICE_ID,
-  //       process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID,
-  //       emailInfo,
-  //       process.env.NEXT_PUBLIC_YOUR_USER_ID
-  //     )
-  //     .then((res) => {
-  //       setLoading(false);
-  //       setEmailInfo(initialFormState);
-  //       toast.success('Message Sent ✌');
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.text);
-  //       setLoading(false);
-  //       toast.error('😢 ' + err.text);
-  //     });
-  // }
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE,
+        emailInfo,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then((res) => {
+        setLoading(false);
+        setEmailInfo(initialFormState);
+        toast.success('Message Sent 😃');
+      })
+      .catch((err) => {
+        console.log(err.text);
+        setLoading(false);
+        toast.error('😢 ' + err.text);
+      });
+  }
 
-  // function validateForm() {
-  //   for (const key in emailInfo) {
-  //     if (emailInfo[key] === '') return false;
-  //   }
-  //   return true;
-  // }
+  function validateForm() {
+    for (const key in emailInfo) {
+      if (
+        key !== 'last_name' &&
+        emailInfo[key as keyof typeof emailInfo] === ''
+      )
+        return false;
+    }
+    return true;
+  }
 
-  // function submitFormOnEnter(event) {
-  //   if ((event.keyCode == 10 || event.keyCode == 13) && event.ctrlKey) {
-  //     if (validateForm()) {
-  //       return sendEmail(event);
-  //     }
-  //     toast.error('Looks like you have not filled the form');
-  //   }
-  // }
+  function submitFormOnEnter(event: any) {
+    if ((event.keyCode == 10 || event.keyCode == 13) && event.ctrlKey) {
+      if (validateForm()) {
+        return sendEmail(event);
+      }
+      toast.error('Looks like you have not filled the form');
+    }
+  }
 
   return (
     <>
@@ -72,23 +75,22 @@ export default function Form() {
         variants={FadeContainer}
         viewport={{ once: true }}
         className="w-full flex flex-col items-center max-w-xl mx-auto my-10"
-        // onSubmit={sendEmail}
-        // onKeyDown={submitFormOnEnter}
+        onSubmit={sendEmail}
+        onKeyDown={submitFormOnEnter}
       >
-        {/* First Name And Last Name */}
-        <div className="w-full grid grid-cols-2 gap-6">
+        <div className="w-full gap-6">
           <motion.div
             variants={mobileNavItemSideways}
             className="relative z-0 w-full mb-6 group"
           >
             <input
               type="text"
-              name="first_name"
+              name="name"
               id="floating_first_name"
-              className="block py-2 mt-2 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+              className="block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
               placeholder=" "
               required
-              value={emailInfo.first_name}
+              value={emailInfo.name}
               onChange={(e) =>
                 setEmailInfo({
                   ...emailInfo,
@@ -100,33 +102,7 @@ export default function Form() {
               htmlFor="floating_first_name"
               className="peer-focus:font-medium absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-              {t('contact.form.first_name')}
-            </label>
-          </motion.div>
-          <motion.div
-            variants={mobileNavItemSideways}
-            className="relative z-0 w-full mb-6 group"
-          >
-            <input
-              type="text"
-              name="last_name"
-              id="floating_last_name"
-              className="block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
-              placeholder=" "
-              required
-              value={emailInfo.last_name}
-              onChange={(e) =>
-                setEmailInfo({
-                  ...emailInfo,
-                  [e.target.name]: e.target.value,
-                })
-              }
-            />
-            <label
-              htmlFor="floating_last_name"
-              className="peer-focus:font-medium absolute text-sm text-slate-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              {t('contact.form.last_name')}
+              {t('contact.form.user_name')}
             </label>
           </motion.div>
         </div>

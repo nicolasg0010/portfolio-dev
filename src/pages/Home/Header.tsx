@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { popUp, opacityVariant } from '../../styles/FramerMotionVariants';
 import { FiDownload } from 'react-icons/fi';
+
 import Ripples from 'react-ripples';
 
 import { socialsData } from '../../content/socialsData';

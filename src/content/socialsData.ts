@@ -1,4 +1,5 @@
 import { SiTwitter, SiLinkedin, SiGithub } from 'react-icons/si';
+import { IoMail } from 'react-icons/io5';
 
 export const socialsData = [
   {
@@ -15,5 +16,10 @@ export const socialsData = [
     title: 'Github',
     Icon: SiGithub,
     url: 'https://github.com/nicolasg0010',
+  },
+  {
+    title: 'Email',
+    Icon: IoMail,
+    url: 'mailto:nicolasg0010@gmail.com',
   },
 ];

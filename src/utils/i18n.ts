@@ -47,8 +47,7 @@ i18n
               'Have a little something, something you wanna talk about? Please feel free to get in touch anytime, whether for work or to just Hi 🙋‍♂️.',
             subtitle: 'Leave a message',
             form: {
-              first_name: 'First Name',
-              last_name: 'Last Name',
+              user_name: 'Name',
               email: 'Email address',
               subject: 'Subject',
               message: 'Message',
@@ -88,8 +87,7 @@ i18n
               '¿Tienes algo, algo de lo que quieras hablar? No dude en ponerse en contacto en cualquier momento, ya sea por trabajo o simplemente para saludar 🙋‍♂️.',
             subtitle: 'Deja un mensaje',
             form: {
-              first_name: 'Nombre',
-              last_name: 'Apellido',
+              user_name: 'Nombre',
               email: 'Correo',
               subject: 'Titulo (subject)',
               message: 'Mensaje',
