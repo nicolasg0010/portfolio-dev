@@ -28,13 +28,15 @@ export default function Header() {
       <div className="w-full relative mx-auto flex flex-col items-center gap-10">
         <motion.div
           variants={popUp}
-          className="relative w-44 h-44 xs:w-52 xs:h-52 flex justify-center items-center rounded-full p-3 before:absolute before:inset-0 before:border-t-4 before:border-b-4 before:border-black before:rounded-full before:animate-photo-spin"
+          className="relative w-52 h-52 xs:w-52 xs:h-52 flex justify-center items-center rounded-full p-3 before:absolute before:inset-0 before:border-t-4 before:border-b-4 before:border-black before:rounded-full before:animate-photo-spin"
         >
           <img
             src="https://avatars.githubusercontent.com/u/104043118?v=4"
-            className="rounded-full shadow filter saturate-0"
-            width={400}
-            height={400}
+            className="rounded-full shadow filter saturate-100"
+            // width={400}
+            // height={400}
+            width="800"
+            height="800"
             alt="cover Profile Image"
           />
         </motion.div>
