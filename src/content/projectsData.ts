@@ -1,8 +1,10 @@
+import eknows_img from '../assets/projects/eknows/landing.png';
+
 export const projectsData = [
   {
     id: 0,
     name: 'E-Knows',
-    coverURL: 'https://imgur.com/wPqz7kM.png',
+    coverURL: eknows_img,
     description:
       'E-Knows is an E-Commerce website for books. Users can create their profile, save their favorite items and leave a review. Administrators have a dashboard with userful information and items management.',
     githubURLs: [
