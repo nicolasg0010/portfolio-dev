@@ -37,7 +37,7 @@ export const projectsData = [
       es: 'Pokemon Gallery es un sitio web donde puedes explorar todos los pokemon, ver sus estadísticas, tipos y evoluciones. También tiene la posibilidad de crear tu propio pokemon.',
     },
     githubURLs: ['https://github.com/nicolasg0010/pokemon-PI'],
-    previewURL: 'https://e-knows.herokuapp.com/',
+    previewURL: 'https://pokemon-pi-puce.vercel.app/',
     tools: [
       'JavaScript',
       'React',
