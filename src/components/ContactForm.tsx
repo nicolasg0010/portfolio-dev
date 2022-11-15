@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { AiOutlineLoading } from 'react-icons/ai';
+import { FormEvent, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
@@ -9,8 +8,8 @@ import {
 } from '../styles/FramerMotionVariants';
 import Ripples from 'react-ripples';
 import { useTranslation } from 'react-i18next';
+import { AiOutlineLoading } from 'react-icons/ai';
 
-// initial State of the form
 const initialFormState = {
   to_name: 'Nicolas Garcia',
   name: '',
@@ -24,7 +23,7 @@ export default function Form() {
   const [emailInfo, setEmailInfo] = useState(initialFormState);
   const [loading, setLoading] = useState(false);
 
-  function sendEmail(e: any) {
+  function sendEmail(e: FormEvent) {
     e.preventDefault();
     setLoading(true);
 
@@ -35,7 +34,7 @@ export default function Form() {
         emailInfo,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
-      .then((res) => {
+      .then(() => {
         setLoading(false);
         setEmailInfo(initialFormState);
         toast.success('Message Sent 😃');

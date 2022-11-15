@@ -1,30 +1,7 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { IoIosArrowUp } from 'react-icons/io';
 
-function useScrollPercentage() {
-  const [scrollPercentage, setScrollPercentage] = useState(0);
-  const getScrollPercent = () => {
-    const h = document.documentElement,
-      b = document.body,
-      st = 'scrollTop',
-      sh = 'scrollHeight';
-
-    return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
-  };
-
-  const scrollEvent = useCallback(() => {
-    setScrollPercentage(getScrollPercent());
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('scroll', scrollEvent);
-    return () => {
-      window.removeEventListener('scroll', scrollEvent);
-    };
-  }, [scrollEvent]);
-
-  return scrollPercentage;
-}
+import useScrollPercentage from '../hooks/useScrollPercentage';
 
 export default function ScrollToTop() {
   const [showButton, setShowButton] = useState(false);
@@ -35,11 +12,8 @@ export default function ScrollToTop() {
   };
 
   useEffect(() => {
-    if (scrollPercentage < 95 && scrollPercentage > 10) {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
+    if (scrollPercentage < 95 && scrollPercentage > 10) setShowButton(true);
+    else setShowButton(false);
   }, [scrollPercentage]);
 
   return (

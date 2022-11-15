@@ -1,17 +1,15 @@
-import { RiTranslate2 } from 'react-icons/ri';
-import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { RiTranslate2 } from 'react-icons/ri';
 
 export default function LanguageBtn() {
   const { i18n } = useTranslation();
   const [currLang, setCurrLang] = useState('');
 
   const changeLanguage = () => {
-    if (currLang === 'es') {
-      setCurrLang('en');
-    } else {
-      setCurrLang('es');
-    }
+    if (currLang === 'es') setCurrLang('en');
+    else setCurrLang('es');
+
     i18n.changeLanguage(currLang === 'es' ? 'en' : 'es');
   };
 

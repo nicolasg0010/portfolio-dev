@@ -89,7 +89,7 @@ i18n
             form: {
               user_name: 'Nombre',
               email: 'Correo',
-              subject: 'Titulo (subject)',
+              subject: 'Titulo',
               message: 'Mensaje',
               send_button: 'Enviar',
               loading_button: 'Enviando...',

@@ -1,5 +1,4 @@
 import i18n from '../utils/i18n';
-import { useTranslation } from 'react-i18next';
 import { BsGithub } from 'react-icons/bs';
 import { MdOutlineLink } from 'react-icons/md';
 
@@ -16,8 +15,6 @@ type Props = {
 };
 
 export default function Project({ project }: Props) {
-  const { t } = useTranslation();
-
   return (
     <div className="card">
       <div className="relative -mt-[35%] sm:-mt-0 md:-ml-[35%] w-full sm:w-1/2 md:w-8/12 shrink-0 rounded-xl overflow-hidden shadow-2xl before:absolute before:inset-0 before:z-10">
