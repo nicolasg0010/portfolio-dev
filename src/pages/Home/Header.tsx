@@ -33,8 +33,6 @@ export default function Header() {
           <img
             src="https://avatars.githubusercontent.com/u/104043118?v=4"
             className="rounded-full shadow filter saturate-100"
-            // width={400}
-            // height={400}
             width="800"
             height="800"
             alt="cover Profile Image"
@@ -60,7 +58,7 @@ export default function Header() {
           <div className="flex flex-col gap-1">
             <motion.h1
               variants={opacityVariant}
-              className="text-5xl lg:text-6xl font-bold font-sarina"
+              className="text-5xl lg:text-6xl font-bold"
             >
               Nicolas Garcia
             </motion.h1>

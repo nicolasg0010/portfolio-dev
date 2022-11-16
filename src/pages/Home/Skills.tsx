@@ -11,6 +11,7 @@ export default function Skills() {
   return (
     <section id="skills" className="mx-5 py-20">
       <HomeHeading title={`${t('skills.title')}`} />
+      <motion.p>{t('skills.description')}</motion.p>
       <motion.div
         initial="hidden"
         whileInView="visible"

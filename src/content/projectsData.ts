@@ -8,7 +8,7 @@ export const projectsData = [
     coverURL: eknows_img,
     description: {
       en: 'E-Knows is an E-Commerce website for books. Users can create their profile, save their favorite items and leave a review. Administrators have a dashboard with userful information and items management.',
-      es: 'E-Knows es un sitio web de comercio electrónico para libros. Los usuarios pueden crear su perfil, guardar sus artículos favoritos y dejar una reseña. Los administradores tienen un tablero con información útil y gestión de elementos.',
+      es: 'E-Knows es un sitio web de comercio electrónico para libros. Los usuarios pueden crear su perfil, guardar sus artículos favoritos y dejar una reseña. Los administradores tienen un tablero con información útil y gestión de productos.',
     },
     githubURLs: [
       'https://github.com/eknows-ecommerce/pf-front',

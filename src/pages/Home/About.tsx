@@ -15,18 +15,11 @@ export default function About() {
           className="font-inter w-full blog-container prose-sm 3xl:prose-lg"
         >
           <div className="prose-sm 3xl:prose-lg text-center sm:text-left">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
-              totam nesciunt illo sequi enim praesentium fugit perferendis
-              officiis labore exercitationem! Ad, voluptate eligendi! Alias
-              aspernatur asperiores nulla doloremque illum culpa!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque
-              totam nesciunt illo sequi enim praesentium fugit perferendis
-              officiis labore exercitationem! Ad, voluptate eligendi! Alias
-              aspernatur asperiores nulla doloremque illum culpa!
-            </p>
+            <p>{t('about.body')}</p>
+            <br />
+            <p>{t('about.tech')}</p>
+            <br />
+            <p>{t('about.hobbies')}</p>
           </div>
         </AnimatedDiv>
       </section>
