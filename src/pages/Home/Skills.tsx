@@ -1,10 +1,11 @@
 /* eslint-disable indent */
 import { useTranslation } from 'react-i18next';
+
 import { motion } from 'framer-motion';
+import { FadeContainer, popUp } from '../../styles/FramerMotionVariants';
 
 import HomeHeading from '../../components/HomeHeading';
 import { skills } from '../../utils/utils';
-import { FadeContainer, popUp } from '../../styles/FramerMotionVariants';
 
 export default function Skills() {
   const { t } = useTranslation();

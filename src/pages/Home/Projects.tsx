@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { AnimatePresence } from 'framer-motion';
+
 import Project from '../../components/Project';
-import AnimatedDiv from '../../components/FramerMotion/AnimatedDiv';
-import { FadeContainer } from '../../styles/FramerMotionVariants';
-import { projectsData } from '../../content/projectsData';
 import HomeHeading from '../../components/HomeHeading';
-import { motion } from 'framer-motion';
+
+import AnimatedDiv from '../../components/FramerMotion/AnimatedDiv';
+import { AnimatePresence, motion } from 'framer-motion';
+import { FadeContainer } from '../../styles/FramerMotionVariants';
+
+import { projectsData } from '../../content/projectsData';
 
 export default function Projects() {
   const { t } = useTranslation();

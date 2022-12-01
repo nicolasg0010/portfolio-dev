@@ -1,14 +1,18 @@
 import i18n from '../../utils/i18n';
 import { useTranslation } from 'react-i18next';
+
 import { motion } from 'framer-motion';
-import { popUp, opacityVariant } from '../../styles/FramerMotionVariants';
+import {
+  popUp,
+  opacityVariant,
+  FadeContainer,
+} from '../../styles/FramerMotionVariants';
+
 import { FiDownload } from 'react-icons/fi';
 
 import Ripples from 'react-ripples';
 
 import { socialsData } from '../../content/socialsData';
-
-import { FadeContainer } from '../../styles/FramerMotionVariants';
 
 import cv_en from '../../assets/Nicolas_Garcia_resume.pdf';
 import cv_es from '../../assets/Nicolas_Garcia_cv.pdf';

@@ -1,7 +1,9 @@
 import { useTranslation } from 'react-i18next';
+
+import HomeHeading from '../../components/HomeHeading';
+
 import AnimatedDiv from '../../components/FramerMotion/AnimatedDiv';
 import { opacityVariant } from '../../styles/FramerMotionVariants';
-import HomeHeading from '../../components/HomeHeading';
 
 export default function About() {
   const { t } = useTranslation();
