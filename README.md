@@ -1,7 +1,3 @@
 # portfolio-dev
 
-### Enviroment variables
-
-VITE_EMAILJS_SERVICE_ID=
-VITE_EMAILJS_TEMPLATE=
-VITE_EMAILJS_PUBLIC_KEY=
+My personal portfolio.
