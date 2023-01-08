@@ -14,7 +14,7 @@ export const projectsData = [
       'https://github.com/eknows-ecommerce/pf-front',
       'https://github.com/eknows-ecommerce/pf-back',
     ],
-    previewURL: 'https://eknows-ecomm.vercel.app',
+    previewURL: 'https://eknows-ecomm.vercel.app/',
     tools: [
       'React',
       'Redux',
